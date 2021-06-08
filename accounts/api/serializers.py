@@ -14,6 +14,14 @@ class UserCreateSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(str(exc))
         return value
 
+    def create(self, validated_data):
+        instance = User.objects.create_user(
+            username=validated_data['username'],
+            password=validated_data['password'],
+            first_name=validated_data['first_name']
+        )
+        return instance
+
     class Meta:
         model = User
         fields = (
