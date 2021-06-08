@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'accounts',
+    'tg_messages',
 ]
 
 MIDDLEWARE = [
